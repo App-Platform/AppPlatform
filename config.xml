@@ -2,7 +2,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.appplatform.app"
-        version   = "1.0.7">
+        version   = "1.0.8">
 		
     <name>App-Platform</name>
 
@@ -28,5 +28,7 @@
 
     <gap:splash src="icons/splash_android.png"  gap:platform="android" gap:density="mdpi" />
     <gap:splash src="icons/splash_tabelt.png" gap:platform="android" gap:density="xhdpi" />
+	
+	<gap:plugin name="ChildBrowser" />
 
 	</widget>

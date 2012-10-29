@@ -29,6 +29,8 @@
 
 <!-- Add PhoneGap -->
 <script type="text/javascript" src="phonegap.js"></script>
+<script type="text/javascript" src="childbrowser.js"></script>
+
 
 <!-- Call jQuery Mobile -->
 <script type="text/javascript" src="scripts/jquery.mobile-1.2.0.min.js"></script>
@@ -180,8 +182,8 @@ $(document).bind('pageshow', function() {
         <a href="http://app-platform.net" data-role="button" data-icon="home" target="_blank">www.app-platform.net</a>
         <a href="http://www.facebook.com/AppPlatformnet" data-role="button" data-icon="facebook" target="_blank" data-ajax="false">facebook</a>
         <a href="http://www.linkedin.com/company/2779772" data-role="button" data-icon="linkedin" target="_blank">linkedin</a>
-        <a href="http://www.linkedin.com/company/2779772" data-role="button" data-icon="linkedin" rel="external" target="_blank">linkedin rel=external</a>
-        <a href="http://www.linkedin.com/company/2779772" data-role="button" data-icon="linkedin" target="_blank" data-ajax="false">linkedin ajax-false</a>
+        <button data-role="button" data-icon="linkedin" onClick="window.plugins.childBrowser.openExternal('http://www.linkedin.com/company/2779772');">linkedin newcall 1</a>
+        <a href="http://www.linkedin.com/company/2779772" data-role="button" data-icon="linkedin" target="_blank" data-ajax="false" onClick="window.plugins.childBrowser.openExternal('http://www.linkedin.com/company/2779772');">linkedin newcall 2</a>
 
 </div>
 <div class="content-primary">
