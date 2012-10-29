@@ -2,9 +2,9 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.appplatform.app"
-        version   = "1.0.1">
+        version   = "1.0.2">
 		
-    <name>App</name>
+    <name>App-Platform</name>
 
     <description>
         App-Platform.net Sales App
@@ -29,5 +29,4 @@
     <gap:splash src="icons/splash_android.png"  gap:platform="android" gap:density="mdpi" />
     <gap:splash src="icons/splash_tabelt.png" gap:platform="android" gap:density="xhdpi" />
 
-    <access origin="http://app-platform.net/test/scripts/form.php" />
 	</widget>
