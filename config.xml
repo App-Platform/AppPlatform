@@ -25,14 +25,14 @@
 
     <icon src="icons/icon.png" />
 	<icon src="icons/android-icon-36x36.png" gap:platform="android" gap:density="ldpi" />
-<icon src="icons/android-icon-48x48.png" gap:platform="android" gap:density="mdpi" />
-<icon src="icons/android-icon-72x72.png" gap:platform="android" gap:density="hdpi" />
-<icon src="icons/android-icon-96x96.png" gap:platform="android" gap:density="xhdpi" />
+	<icon src="icons/android-icon-48x48.png" gap:platform="android" gap:density="mdpi" />
+	<icon src="icons/android-icon-72x72.png" gap:platform="android" gap:density="hdpi" />
+	<icon src="icons/android-icon-96x96.png" gap:platform="android" gap:density="xhdpi" />
 
-	<gap:splash src="splash/android-startup-image-200x320.png" gap:platform="android" gap:density="ldpi" />
-<gap:splash src="splash/android-startup-image-320x480.png" gap:platform="android" gap:density="mdpi" />
-<gap:splash src="splash/android-startup-image-480x800.png" gap:platform="android" gap:density="hdpi" />
-<gap:splash src="splash/android-startup-image-720x1280.png" gap:platform="android" gap:density="xhdpi" />
+	<gap:splash src="icons/android-startup-image-200x320.png" gap:platform="android" gap:density="ldpi" />
+	<gap:splash src="icons/android-startup-image-320x480.png" gap:platform="android" gap:density="mdpi" />
+	<gap:splash src="icons/android-startup-image-480x800.png" gap:platform="android" gap:density="hdpi" />
+	<gap:splash src="icons/android-startup-image-720x1280.png" gap:platform="android" gap:density="xhdpi" />
 	
 	<gap:plugin name="ChildBrowser" />
 
