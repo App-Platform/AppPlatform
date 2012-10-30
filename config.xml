@@ -4,10 +4,10 @@
         id        = "com.appplatform.app"
         version   = "1.0.17">
 		
-    <name>App-Platform</name>
+    <name>App-Platform.net</name>
 
     <description>
-        App-Platform.net Sales App
+        App-Platform.net Sales App - The tool to show off both how App-Platform.net's App can help and allow our team to take orders right from their mobile device. 
     </description>
 
     <author href="http://app-platform.net" email="info@app-platform.net">
