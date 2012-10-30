@@ -20,7 +20,6 @@ a#body:hover{text-decoration:underline;}
 ul {
 	margin-left: 			-15px;
 }
-
 .shadow {
 	-moz-box-shadow: 2px 2px 3px #ccc;
 	-webkit-box-shadow: 2px 2px 3px #ccc;
@@ -32,6 +31,14 @@ ul {
 	margin-left:5px;
 	margin-right:10px;
 }
+
+label.error {
+    color: red;
+    font-size: 12px;
+    font-weight: normal;
+	margin-left: 10px;
+}
+
 
 .ui-icon-email {
 	background-image: url(images/icon-email.png);
