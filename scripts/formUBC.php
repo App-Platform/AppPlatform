@@ -1,14 +1,6 @@
 <?php
 
-function isValidEmail($Email) {
-return preg_match("/^[a-z0-9._\-]+[@]([a-z0-9\-]+[.])+([a-z]{2,4})\$/i",
-$Email);
-}
-
 // posted data to local variables
-$EmailFrom = "info@app-platform.net";
-$EmailTo = "info@app-platform.net";
-$Subject = "App Info from app-platform.net";
 $Name = Trim(stripslashes($_POST['Name'])); 
 $Phone = Trim(stripslashes($_POST['Phone'])); 
 $Email = Trim(stripslashes($_POST['Email'])); 
@@ -37,18 +29,24 @@ $Domain = Trim(stripslashes($_POST['Domain']));
 $HostUsername = Trim(stripslashes($_POST['HostUsername']));
 $HostPassword = Trim(stripslashes($_POST['HostPassword']));
 
-// validation
-$validationOK=true;
-if (!$validationOK) {
-	print "<meta http-equiv=\"refresh\" content=\"0;URL=http://app-platform.net/test/webapp.htm#error\">";
+// Validate E-Mail isn't not a Email
+if (filter_var($Email, FILTER_VALIDATE_EMAIL)) {
+	} 
+	else {
+	print "<meta http-equiv=\"refresh\" content=\"0;URL=http://app-platform.net/formerror.htm\">";
 	exit;
 }
 
 // validate required fields have data
-if(trim($Name) == '' || trim($Email) == '') {
-	print "<meta http-equiv=\"refresh\" content=\"0;URL=http://app-platform.net/test/webapp.htm#formerror\">";
+if(trim($Email) == '') {
+	print "<meta http-equiv=\"refresh\" content=\"0;URL=http://app-platform.net/formerror.htm\">";
 	exit;
 }
+
+// prepare email
+$EmailFrom = "info@app-platform.net";
+$EmailTo = "info@app-platform.net";
+$Subject = "App Info from app-platform.net";
 
 // prepare email body text
 $Body = "";
@@ -153,17 +151,15 @@ $Body .= "\n";
 $Body .= "Password: ";
 $Body .= $HostPassword;
 
-
 // send email 
 $success = mail($EmailTo, $Subject, $Body, "From: <$EmailFrom>");
 
 // redirect to success page 
 if ($success){
-  print "<meta http-equiv=\"refresh\" content=\"0;URL=http://app-platform.net/test/webapp.htm#thanks\">";
+  print "<meta http-equiv=\"refresh\" content=\"0;URL=http://app-platform.net/thanks.htm\">";
 }
 else{
-  print "<meta http-equiv=\"refresh\" content=\"0;URL=http://app-platform.net/test/webapp.htm#error\">";
+  print "<meta http-equiv=\"refresh\" content=\"0;URL=http://app-platform.net/formerror.htm\">";
 }
-
 
 ?>
