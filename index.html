@@ -1,116 +1,30 @@
-<!DOCTYPE html>
- 
+<!DOCTYPE html> 
 <html>
- 
 <head> 
 <title>App-Platform.net</title>
-<link rel="SHORTCUT ICON" href="structure/favicon.ico" />
+<link rel="SHORTCUT ICON" href="favicon.ico" />
 <meta name="KEYWORDS" content="app-platform, app platform, appplatform, mobile web app development, mobile app design, apps, MN, Twin Cities, Minneapolis, St. Paul, Greater twin city metro area,  HTML 5 mobile web design, custom mobile data capture, custom mobile, unlimited business card app, cross platform compatible mobile apps, amazing referral tool" />
 <meta name="DESCRIPTION" content="Offering custom mobile applications for business professionals, including The Unlimited Business Card App and custom designed apps for all of your needs." />
 <meta content='True' name='HandheldFriendly' />
 <meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' />
 <meta name="viewport" content="width=device-width" />
-<link rel="stylesheet" href="css/theme.css" />
-<link rel="stylesheet" href="css/app-platform.css" />
 
+<link type="text/css" rel="stylesheet" href="css/jquery.mobile.structure-1.3.0.css" />
+<link type="text/css" rel="stylesheet" href="css/custom-theme.css" />
+<link type="text/css" rel="stylesheet" href="css/jquery-mobile-fluid960.css" />
+<link type="text/css" rel="stylesheet" href="css/colorbox.css" />
+<link type="text/css" rel="stylesheet" href="css/pwi.css" />
+<link type="text/css" rel="stylesheet" href="css/app-platform.css" />
 
-<!-- Add jQuery -->
-<script type="text/javascript" src="scripts/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.mobile-1.3.0.min.js"></script>
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="js/jquery.colorbox.js"></script>
+<script type="text/javascript" src="js/jquery.pwi.js"></script>
+<script type="text/javascript" src="js/app-platform.js"></script>
 
-<!-- Add PhoneGap -->
 <script type="text/javascript" src="phonegap.js"></script>
 <script type="text/javascript" src="childbrowser.js"></script>
-
-
-<!-- Call jQuery Mobile -->
-<script type="text/javascript" src="scripts/jquery.mobile-1.2.0.min.js"></script>
-<link rel="stylesheet" href="css/jquery.mobile.structure-1.2.0.min.css" />
-
-<!-- iOS add to home screen options -->
-<script type="text/javascript">
-var addToHomeConfig = {
-	animationIn: 'bubble',
-	animationOut: 'drop',
-	lifespan:100000,
-	touchIcon:true,
-};
-</script>
-<script type="text/javascript">
-$(document).bind('pageshow', function() {
-  var activePage = $('.page.ui-page-active');
-  activePage.find('input[placeholder], textarea[placeholder]').placeholder();
-});
-</script>
-
-<!-- Reflow layout, Form Placeholder, iOS home screen popup -->
-<script type="text/javascript" src="scripts/app-platform.js"></script>
-
-<script>
-	$(function() {
-	$('input, textarea').placeholder();
-	});
-</script>
-
-<!-- colorbox -->
-<link rel="stylesheet" href="lightbox/colorbox.css" type="text/css" media="screen" />
-<script type="text/javascript" src="lightbox/jquery.colorbox.js"></script>
-
-<!-- Picasa Web Integrator -->
-<link rel="stylesheet" href="lightbox/pwi.css" type="text/css"/>
-<script type="text/javascript" src="lightbox/jquery.pwi.js"></script>
-<script type="text/javascript" src="lightbox/jquery.blockUI.js"></script>
-
-<script type="text/javascript">
-
-  $(document).one('pageshow', '#examples', function () {	  
-	var settings = {
-	  username: 'jimhunkinsent',
-	  maxresults: 50,
-	  mode: 'album',
-	  album: 'AppPlatform',
-	  thumbCrop: 1,
-	  showAlbumDescription: false,
-	};
-	  $("#gallery_1").pwi(settings);
-  });
-
-</script>
-
-<!-- Form Validation -->
-<script type="text/javascript" src="scripts/jquery.validate.min.js"></script>
-<script type="text/javascript">
-$(function() {
-	$( "#form1" ).validate({
-		submitHandler: function(form) {
-		   var data= $(form).serialize()
-		
-				$.ajax({
-				type: "POST",
-				url: "http://app.app-platform.net/infoRequest.php",
-				data: data,
-				success: function(){
-					$(form).fadeOut();
-						  $('.thanks1').fadeIn(2500);
-				}
-				});
-			return false;
-		}
-	});
-}); 	
-</script>
-
-<!-- Form reset button -->
-<script type="text/javascript">
-$(function() {
-	$('#reset_button1').click(
-		function() { 
-			$('.thanks1').fadeOut();
-			$('.form1').fadeIn(2500); 
-			$("#form1")[0].reset();
-		}
-	);
-}); 
-</script>
 
 </head> 
 
@@ -118,8 +32,8 @@ $(function() {
 
 <!-- Home -->
 <div data-role="page" data-theme="a" id="home"> 
-  <div data-role="header" data-theme="a" align="center">
-    <img src="structure/logo.png" alt="logo">
+  <div data-role="header" data-theme="a" class="center">
+    <img src="img/logo.png" alt="logo">
     <a href="#help" data-rel="popup" data-position-to="window" data-transition="pop" data-icon="alert" class="ui-btn-right">Help</a>
 	<div data-role="navbar" data-iconpos="top">
 		<ul>
@@ -127,90 +41,70 @@ $(function() {
 			<li><a href="#examples" data-icon="grid">Examples</a></li>
 		</ul>
 	</div><!-- /navbar -->  
-  </div>
+  </div><!-- /header -->
   
-	<div data-role="content">
-        <p>
-        
-        <!-- Help Popup-->
-        <div data-role="popup" id="help" data-overlay-theme="b" data-theme="a" style="max-width:500px;" class="ui-corner-all">
-        
-            <div data-role="header" data-theme="a" align="center">
-                <img src="structure/logo2.png" alt="logo">
-            </div>
-        
-            <div data-role="content" style="background-color:#fff;">	
-                <h2>How does this work?</h2> 
-                <p style="font-size:12px">
-                <strong>Send a referral</strong><br>
-                Tap the Email Referral button and an email will be generated with information about App-Platform.net. Whoever is entered into the To: will receive the information, and App-Platform.net will have both your email address and your referral's email address for tracking purposes.<br />
-                <br />
-                <strong>Send this app</strong><br />
-                Tap the Send this app button to generate an email with a link for downloading this very app!<br />
-				<br />
-				<strong>Contact</strong><br />
-				The buttons under the Contact heading allow for contact with App-Platform.net, including email, our website and our facebook page.<br />
-				<br />
-				<strong>Info</strong><br />
-				The buttons under the Info heading include expandable information for our products and services.<br />
-				<br />
-				<strong>App Examples</strong><br />
-				The buttons under App Examples include examples of several of our apps in action. These are weblinks to the live apps online as well as the instructional landing page for each. They provide an excellent reference for a potential customer to see our applications in action.<br />
-				<br />
-				<strong>Get Started on Your App!</strong><br />
-				The buttons under Get Started on Your App! includes an expandable form for a potential client to enter all of their information to get their own custom application. Follow the instructions in the form and capture all of the necessary data for best results.<br />
-				<br />
-				<strong>App Screenshots</strong><br />
-				This should be pretty self explanatory. The icons under this are a web gallery that shows screen shots from some of our completed apps.<br />
-				<br />
-				<strong>Get Your Own App</strong><br />
-				This button sends and email request for more information about getting your own app. It's semi-redundant, but is included in all of our apps.
-                </p>
-            </div>
-            
-            <div data-role="footer" align="center">
-                <a href="#" data-role="button" data-inline="true" data-theme="a" data-rel="back" data-icon="delete" style="margin-top:10px; margin-bottom:10px;">Close Window</a>
-            </div>
+<div data-role="content">
+    <!-- Help Popup-->
+    <div data-role="popup" id="help" data-overlay-theme="b" data-theme="a" style="max-width:500px;" class="ui-corner-all help">
+        <div data-role="header" data-theme="a" class="center">
+            <img src="img/logo2.png" alt="logo">
         </div>
+        <div data-role="content" style="background-color:#fff;">
+            <h2>How does this work?</h2>
+            <p><strong>Send a referral</strong><br>
+                    Tap the Email Referral button and an email will be generated with information about App-Platform.net. Whoever is entered into the To: will receive the information, and App-Platform.net will have both your email address and your referral's email address for tracking purposes.</p>
+            <p><strong>Send this app</strong><br>
+                    Tap the Send this app button to generate an email with a link for downloading this very app!</p>
+    		<p><strong>Contact</strong><br>
+    				The buttons under the Contact heading allow for contact with App-Platform.net, including email, our website and our facebook page.</p>
+    		<p><strong>Info</strong><br>
+    				The buttons under the Info heading include expandable information for our products and services.</p>
+    		<p><strong>App Examples</strong><br>
+    				The buttons under App Examples include examples of several of our apps in action. These are weblinks to the live apps online as well as the instructional landing page for each. They provide an excellent reference for a potential customer to see our applications in action.</p>
+    		<p><strong>Get Started on Your App!</strong><br>
+    				The buttons under Get Started on Your App! includes an expandable form for a potential client to enter all of their information to get their own custom application. Follow the instructions in the form and capture all of the necessary data for best results.</p>
+    		<p><strong>App Screenshots</strong><br>
+    				This should be pretty self explanatory. The icons under this are a web gallery that shows screen shots from some of our completed apps.</p>
+    		<p><strong>Get Your Own App</strong><br>
+    				This button sends and email request for more information about getting your own app. It's semi-redundant, but is included in all of our apps.</p>
+        </div>
+        <div data-role="footer" class="center">
+            <a href="#" data-role="button" data-inline="true" data-theme="a" data-rel="back" data-icon="delete" style="margin-top:10px; margin-bottom:10px;">Close Window</a>
+        </div>
+    </div><!-- /help popup -->
 
+    <h1 class="center"><a id="body" href="tel:8885590902">(888) 559-0902</a></h1>
+    
+    <br />
 
-	  	<h1 align="center"><a id="body" href="tel:8885590902">(888) 559-0902</a></h1>
-        
-<div class="content-secondary">
-
+<fieldset class="container_12">
+    <div class="grid_4 ui-block960-a">
   		<a href="mailto:?cc=info%40app-platform.net&subject=You've%20been%20referred%20to%20App-Platform.net&body=You're%20being%20referred%20to%20App-Platform.net%3B%20offering%20mobile%20web%20applications%20and%20design.%0D%0A%0D%0AApp-Platform.net's%20Ultimate%20Business%20Card%20App%2C%20an%20unlimited%2C%20trackable%2C%20business%20card%2C%20works%20like%20a%20never%20ending%20referral%20source%20for%20you.%20Whether%20you%20or%20a%20referral%20partner%20are%20giving%20out%20your%20information%2C%20you%20can%20now%20track%20who%20gave%20out%20your%20information%20and%20you'll%20always%20get%20the%20email%20address%20of%20the%20person%20being%20referred%20to%20you.%0D%0A%0D%0AApp-Platform.net%20is%20also%20offering%20a%20mobile%20solution%20for%20all%20your%20Information%20Capturing%20needs%20with%20the%20Custom%20Info%20Capture%20App!%20This%20custom%20application%20allows%20you%20to%20be%20sure%20to%20capture%20all%20the%20information%20you%20need%20while%20you're%20in%20the%20field%20or%20with%20a%20client.%20Whatever%20your%20needs%2C%20we%20can%20design%20and%20deploy%20an%20app%20that's%20right%20for%20you.%0D%0A%0D%0AContact%20us%20today%20by%20replying%20to%20this%20email%20or%20using%20the%20form%20on%20our%20website%2C%20App-Platform.net.%20We%20can%20schedule%20a%20meeting%20by%20phone%20or%20in%20person%2C%20whenever%20is%20convenient%20for%20you%2C%20and%20discuss%20all%20the%20ways%20we%20can%20help%20with%20your%20business!%0D%0A%0D%0AThank%20you!%0D%0A%0D%0Ahttp%3A%2F%2Fapp-platform.net" target="_blank" data-role="button" data-icon="email" data-transition="slide">Email Referral</a>
   		<a href="mailto:?cc=info%40app-platform.net&subject=Get%20the%20App-Platform.net%20App!&body=Get%20the%20App-Platform.net%20App%20at%20http%3A%2F%2Fapp.app-platform.net." target="_blank" data-role="button" data-icon="email" data-transition="slide">Send this app</a>
-
-		<br />
-        
-    	<strong>Contact</strong>
+    	<br />
+        <p><strong>Contact</strong></p>
         <a href="tel:8885590902" data-role="button" data-icon="phone">(888) 559-0902</a>
         <a href="mailto:info@app-platform.net" target="_blank" data-role="button" data-icon="email">info@app-platform.net</a>
         <a data-role="button" data-icon="home" target="_blank" onClick="window.plugins.childBrowser.openExternal('http://app-platform.net');">www.app-platform.net</a>
         <a data-role="button" data-icon="facebook" target="_blank" onClick="window.plugins.childBrowser.openExternal('http://www.facebook.com/AppPlatformnet');">facebook</a>
         <a data-role="button" data-icon="linkedin" target="_blank" onClick="window.plugins.childBrowser.openExternal('http://www.linkedin.com/company/2779772');">linkedIn</a>
-
-</div>
-<div class="content-primary">
-
-        <br />
-        
+    </div><!-- /block a -->
+    <div class="grid_8 ui-block960-b">
         <div data-role="collapsible" data-collapsed="true">
-        <h2>Request More Information</h2>
-        
+        <h2>Request More Information</h2>        
           <form id="form1" class="form1" method="post" data-ajax="false">
         	I would like someone from App-Platform.net to contact me.
             <div data-role="fieldcontain" class="ui-hide-label">
               <label for="Name">Name:</label>
-              <input type="text" name="Name" id="Name" value="" placeholder="Name" style="background:#ffffff;" />
+              <input type="text" name="Name" id="Name" value="" placeholder="Name" data-mini="true" />
             </div>
             <div data-role="fieldcontain" class="ui-hide-label">
               <label for="Phone">Phone:</label>
-              <input type="text" name="Phone" id="Phone" value="" placeholder="Phone" style="background:#ffffff;" />
+              <input type="text" name="Phone" id="Phone" value="" placeholder="Phone" data-mini="true" />
             </div>
             <div data-role="fieldcontain" class="ui-hide-label">
               <label for="Email">Email:</label>
-              <input type="text" name="Email" id="Email" value="" placeholder="Email *" style="background:#ffffff;" class="required email" />
+              <input type="text" name="Email" id="Email" value="" placeholder="Email *" class="required email" data-mini="true" />
             </div>
             <div  data-role="fieldcontain">
               <fieldset data-role="controlgroup" data-mini="false">
@@ -226,137 +120,101 @@ $(function() {
             <label for="Message">Message:</label>
             <textarea name="Message" id="Message" style="background:#ffffff;"></textarea>
             <input type="submit" id="post_submit1" name="submit" value="Submit" class="submit-value" data-inline="true" />
-            <br />
+            <br>
             <span class="smallText">* Required field.</span>
           </form>
-          <p class="thanks1" style="display:none"> <br />
-            <br />
-            <span class="headerText">Thank You</span><br />
-            <br />
-            Your information has been submitted. One of our representatives will contact you soon.<br />
-            <br />
-            <a id="reset_button1" href="" data-role="button" data-inline="true">Reset Form</a> </p>
-          <br />
-          <br />
+          <p class="thanks1" style="display:none"> <br>
+            <br>
+            <span class="headerText">Thank You</span><br>
+            <br>
+            Your information has been submitted. One of our representatives will contact you soon.<br>
+            <br>
+            <a id="reset_button1" href="" data-role="button" data-inline="true">Reset Form</a>
+          <br>
+          <br> 
+          </p>
         </div>
-        
-        
-        <br />
-        <br />
-        
-        <strong>Info</strong>
-        
-        <div data-role="collapsible" data-collapsed="true">
+	<br />
+    <p><strong>Info</strong></p>
+
+    <div data-role="collapsible" data-collapsed="true">
         <h2>Ultimate Business Card App</h2>
-        <p>
-        <img src="structure/StandardApp.png" alt="Apps Starting at $350" align="right">
-		The Ultimate Business Card App is an unlimited, track-able, business card that functions as a never ending referral source for you and your business. Whether you or a referral partner are passing your information, you will now see who gave out your information and you'll always get the email address of the person to whom you are being recommended. This empowers you to follow up immediately and be in control of the entire referral process. You will no longer be waiting for referrals to contact you off a business card you weren't aware was given out.<br />
-        <br />
-        <strong>Our Ultimate Business Card App includes:</strong>
-        </p>
-        
+        <p><img src="img/StandardApp.png" alt="Apps Starting at $350" class="right">
+		The Ultimate Business Card App is an unlimited, track-able, business card that functions as a never ending referral source for you and your business. Whether you or a referral partner are passing your information, you will now see who gave out your information and you'll always get the email address of the person to whom you are being recommended. This empowers you to follow up immediately and be in control of the entire referral process. You will no longer be waiting for referrals to contact you off a business card you weren't aware was given out.</p>
+        <p><strong>Our Ultimate Business Card App includes:</strong></p>
         <ul>
-        <li>A page with simple instructions on loading your app</li>
-        <li>Your app on Google Play Marketplace</li>
-        <li>One page for your information</li>
-        <li>One custom email referral link</li>
-        <li>One custom map link</li>
-        <li>Custom header logos</li>
-        <li>Custom loading page</li>
-        <li>Custom smart phone icons</li>
-        <li>User up datable photo gallery</li>
+            <li>A page with simple instructions on loading your app</li>
+            <li>Your app on Google Play Marketplace</li>
+            <li>One page for your information</li>
+            <li>One custom email referral link</li>
+            <li>One custom map link</li>
+            <li>Custom header logos</li>
+            <li>Custom loading page</li>
+            <li>Custom smart phone icons</li>
+            <li>User up datable photo gallery</li>
         </ul>
-        <p>
-        All of our Apps are added to Google Play (the Android Market) and we create a landing page on your website (or on App-Platform.net) with QR codes and instructions on how to load the app on whatever device your customer has.
-        </p>	
-        </p>
-        </div>
+        <p>All of our Apps are added to Google Play (the Android Market) and we create a landing page on your website (or on App-Platform.net) with QR codes and instructions on how to load the app on whatever device your customer has.</p>	
+    </div>
         
-        <div data-role="collapsible" data-collapsed="true">
+    <div data-role="collapsible" data-collapsed="true">
         <h2>Custom Info Capture App</h2>
-        <p>
-        <img src="structure/InfoCapApp.png" alt="Apps Starting at $450" align="right">
-        Capturing information accurately is crucial in today's fast-paced business world. Our Custom Info Capture App makes the process quick and easy. A pen and paper form is fine, but what if you could be sure all the required information you needed was legible, accurate, and archived electronically immediately after it was recorded? You can with our Custom Info Capture App! We will build your app with up to three sections and include up to 25 custom fields for one low price, including validation of up to 5 required fields.</p>
+        <p><img src="img/InfoCapApp.png" alt="Apps Starting at $450" class="right">Capturing information accurately is crucial in today's fast-paced business world. Our Custom Info Capture App makes the process quick and easy. A pen and paper form is fine, but what if you could be sure all the required information you needed was legible, accurate, and archived electronically immediately after it was recorded? You can with our Custom Info Capture App! We will build your app with up to three sections and include up to 25 custom fields for one low price, including validation of up to 5 required fields.</p>
         <p>Capture data from prospective clients while in your office or in the field. Capture information at your next trade show or buying show. Use it as an easy way to to show off your product or services and 'wow' your customers.</p>
         <p>Of course we recommend having both our Ultimate Business Card App and the Custom Info Capture App. But if you'd like only one App and need to be able to collect data on the go, we can add a custom email referral link and contact information to your Custom Info Capture App for another $50.</p>
-        </div>
+    </div>
         
-        <div data-role="collapsible" data-collapsed="true">
+    <div data-role="collapsible" data-collapsed="true">
         <h1>More Services</h1>
-        <p>
         <h3>Custom Apps, Website Mobilization, and More!</h3>
-        Do you need something more? We can build it! Want an app that lets your customers place orders with you? We can help. Need an app that shows off a specific product or service with interactive media? We can build that! You tell us what you need and we'll quote it and build it for you. Don't be afraid to imagine exactly what you'd want your mobile app to do, you might be surprised what we can do for you and how low cost it can be.<br />
-        <br />
-        Have an existing website? You may be shocked to discover how many of your customers are visiting your site on mobile devices, and if you've ever tried to navigate a website designed for desktop browsers on a mobile device, you might already be aware of how frustrated your customers could be not being able to get the information they want when they want it. Let us create a custom mobile site for you that will make navigation easier for your customers no matter what device they're using. We'll analyze your site and will quote the work based on inline conversion or a full build and take you through the process step by step.<br />
-        <br />
-        We can do traditional web and graphic design as well! Worried about going mobile before you get your main site overhauled? Need a new logo or just a refresh on your current site map / design? Not happy with your facebook profile / cover image or a LinkedIn product image? We can help you there as well. We are full service for all of your online needs!<br />
-        <br />
-        <strong>Want something different? No problem!</strong><br />
-        <br />
-        We can customize nearly everything in your app so that you get exactly what you want.
-        </p>
-        </div>
+        <p>Do you need something more? We can build it! Want an app that lets your customers place orders with you? We can help. Need an app that shows off a specific product or service with interactive media? We can build that! You tell us what you need and we'll quote it and build it for you. Don't be afraid to imagine exactly what you'd want your mobile app to do, you might be surprised what we can do for you and how low cost it can be.</p>
+        <p>Have an existing website? You may be shocked to discover how many of your customers are visiting your site on mobile devices, and if you've ever tried to navigate a website designed for desktop browsers on a mobile device, you might already be aware of how frustrated your customers could be not being able to get the information they want when they want it. Let us create a custom mobile site for you that will make navigation easier for your customers no matter what device they're using. We'll analyze your site and will quote the work based on inline conversion or a full build and take you through the process step by step.</p>
+        <p>We can do traditional web and graphic design as well! Worried about going mobile before you get your main site overhauled? Need a new logo or just a refresh on your current site map / design? Not happy with your facebook profile / cover image or a LinkedIn product image? We can help you there as well. We are full service for all of your online needs!</p>
+        <p><strong>Want something different? No problem!</strong></p>
+        <p>We can customize nearly everything in your app so that you get exactly what you want.</p>
+    </div>
         
-        <div data-role="collapsible" data-collapsed="true">
+    <div data-role="collapsible" data-collapsed="true">
         <h2>Hosting</h2>
-        <p>
-        <img src="structure/hosting.png" alt="Hosting $60/year" align="right">
-		Don't have a website? No problem! That's why we created the App-Platform. All you have to do is choose your sub-domain to be and we handle the rest!<br />
- 		<br />
-        <img src="structure/URL.jpg" alt="WhatEverYouWant.app-platform.net">
-        </p>
-        </div>
+        <p><img src="img/hosting.png" alt="Hosting $60/year" class="right">Don't have a website? No problem! That's why we created the App-Platform. All you have to do is choose your sub-domain to be and we handle the rest!</p>
+ 		<p><img src="img/URL.jpg" alt="WhatEverYouWant.app-platform.net"></p>
+    </div>
         
-        <div data-role="collapsible" data-collapsed="true">
+    <div data-role="collapsible" data-collapsed="true">
         <h2>FAQ's</h2>
-        <p>
-            Q: <strong>Why do I need an App?</strong><br />
-            A: Think of it as another tool to help your business. Just as having a website became a necessity, so too will mobile / web applications. Our flagship Unlimited Business Card App is the perfect referral tool for your business.<br />
-            <br />
-            Q: <strong>Does the person I want to send my info to have to have a smart phone?</strong><br />
-            A: Nope! Only the person sending the info has to have the smart phone.<br />
-            <br />
-            Q: <strong>What smart phones / tablets work?</strong><br />
-            A: Devices running iOS (iPhone, iPad and iPod touch), Android devices (Droid, Nexus, etc.), Windows Phones and newer Blackberry devices. Pretty much anything that has a web browser will work!<br />
-            <br />
-            Q: <strong>Why do I need hosting?</strong><br />
-            A: To make the app as easy as possible to distribute we create a webpage with instructions on loading the app on various devices. Also, some smart phones will use a web version of the app and information has to "live" somewhere.<br />
-            <br />
-            Q: <strong>What the heck is a subdomain?</strong><br />
-            A: It is a prefix to a web address, for example <strong>YourApp</strong>.app-platform.net.<br />
-            <br />
-            Q: <strong>Will my app have an icon or do I get that stupid bookmark icon?</strong><br />
-            A: Your app will have custom icons on iDevices, Android devices, and windows phones!<br />
-            <br />
-            Q: <strong>Will my app be in the Google Play Store (Android Market)?</strong><br />
-            A: Yes! We submit all of our apps to Google so your app will be searchable.<br />
-            <br />
-            Q: <strong>Will my app be in the iTunes store?</strong><br />
-            A: Unfortunately submitting apps to the iTunes store is costly and can take a very long time. However, our web app functions exactly like an app from iTunes with custom icons and loading screens. If you would like to submit your app to Apple App Store yourself, we will compile an iTunes friendly version of your app at no additional charge.<br>
-        </p>
-        </div>
+        <p>Q: <strong>Why do I need an App?</strong><br>
+            A: Think of it as another tool to help your business. Just as having a website became a necessity, so too will mobile / web applications. Our flagship Unlimited Business Card App is the perfect referral tool for your business.</p>
+        <p>Q: <strong>Does the person I want to send my info to have to have a smart phone?</strong><br>A: Nope! Only the person sending the info has to have the smart phone.</p>
+        <p>Q: <strong>What smart phones / tablets work?</strong><br>
+            A: Devices running iOS (iPhone, iPad and iPod touch), Android devices (Droid, Nexus, etc.), Windows Phones and newer Blackberry devices. Pretty much anything that has a web browser will work!</p>
+        <p>Q: <strong>Why do I need hosting?</strong><br>
+            A: To make the app as easy as possible to distribute we create a webpage with instructions on loading the app on various devices. Also, some smart phones will use a web version of the app and information has to "live" somewhere.</p>
+        <p>Q: <strong>What the heck is a subdomain?</strong><br>
+            A: It is a prefix to a web address, for example <strong>YourApp</strong>.app-platform.net.</p>
+        <p>Q: <strong>Will my app have an icon or do I get that stupid bookmark icon?</strong><br>
+            A: Your app will have custom icons on iDevices, Android devices, and windows phones!</p>
+        <p>Q: <strong>Will my app be in the Google Play Store (Android Market)?</strong><br>
+            A: Yes! We submit all of our apps to Google so your app will be searchable.</p>
+        <p>Q: <strong>Will my app be in the iTunes store?</strong><br>
+            A: Unfortunately submitting apps to the iTunes store is costly and can take a very long time. However, our web app functions exactly like an app from iTunes with custom icons and loading screens. If you would like to submit your app to Apple App Store yourself, we will compile an iTunes friendly version of your app at no additional charge.</p>
+    </div>
+    </div><!-- /block b -->
+</fieldset>
+</div><!-- /content -->
 
-</div>        
+<div data-role="footer" data-theme="a">
+    <div class="footerText" class="center" style="margin-top:15px; margin-bottom:15px;">
+        <p><script type="text/javascript">
+            copyright=new Date(); update=copyright.getFullYear(); document.write("&nbsp;Copyright &copy; "+ update + " App-Platform");
+        </script></p>
+        <p><a href="mailto:?cc=info%40app-platform.net&subject=Get%20Your%20Own%20App!&body=Go%20to%20http%3A%2F%2Fapp-platform.net%20to%20find%20out%20how%20to%20get%20your%20own%20app!" target="_blank" data-role="button" data-theme="a" data-inline="true" data-icon="email">Get your own app!</a></p>
+    </div>
+</div><!-- /footer -->
+</div><!-- /page -->
 
-        </p>
-  </div> 
-    
-  <div data-role="footer" data-theme="a">
-    <div class="footerText" align="center" style="margin-top:15px; margin-bottom:15px;">
-		<script type="text/javascript"> 
-            copyright=new Date(); update=copyright.getFullYear(); document.write("&nbsp;Copyright &copy; "+ update + " Jim Hunkins Enterprises");
-        </script>
-        <br /><br />
-        <a href="mailto:?cc=info%40app-platform.net&subject=Get%20Your%20Own%20App!&body=Go%20to%20http%3A%2F%2Fapp-platform.net%20to%20find%20out%20how%20to%20get%20your%20own%20app!" target="_blank" data-role="button" data-theme="a" data-inline="true" data-icon="email">Get your own app!</a>
-      </div>
-    </div> 
-</div>
-
-
-<!-- Examples -->
+<!-- Examples Page -->
 <div data-role="page" data-theme="a" id="examples"> 
-  <div data-role="header" data-theme="a" align="center">
-    <img src="structure/logo.png" alt="logo">
+  <div data-role="header" data-theme="a" class="center">
+    <img src="img/logo.png" alt="logo">
     <a href="#help" data-rel="popup" data-position-to="window" data-transition="pop" data-icon="alert" class="ui-btn-right">Help</a>
 	<div data-role="navbar" data-iconpos="top">
 		<ul>
@@ -367,106 +225,114 @@ $(function() {
   </div>
   
 	<div data-role="content">
-        <p>
-        
-        <!-- Help Popup-->
-        <div data-role="popup" id="help" data-overlay-theme="b" data-theme="a" style="max-width:500px;" class="ui-corner-all">
-        
-            <div data-role="header" data-theme="a" align="center">
-                <img src="structure/logo2.png" alt="logo">
-            </div>
-        
-            <div data-role="content" style="background-color:#fff;">	
-                <h2>How does this work?</h2> 
-                <p style="font-size:12px">
-                <strong>Send a referral</strong><br>
-                Tap the Email Referral button and an email will be generated with information about App-Platform.net. Whoever is entered into the To: will receive the information, and App-Platform.net will have both your email address and your referral's email address for tracking purposes.<br />
-                <br />
-                <strong>Send this app</strong><br />
-                Tap the Send this app button to generate an email with a link for downloading this very app!<br />
-				<br />
-				<strong>Contact</strong><br />
-				The buttons under the Contact heading allow for contact with App-Platform.net, including email, our website and our facebook page.<br />
-				<br />
-				<strong>Info</strong><br />
-				The buttons under the Info heading include expandable information for our products and services.<br />
-				<br />
-				<strong>App Examples</strong><br />
-				The buttons under App Examples include examples of several of our apps in action. These are weblinks to the live apps online as well as the instructional landing page for each. They provide an excellent reference for a potential customer to see our applications in action.<br />
-				<br />
-				<strong>Get Started on Your App!</strong><br />
-				The buttons under Get Started on Your App! includes an expandable form for a potential client to enter all of their information to get their own custom application. Follow the instructions in the form and capture all of the necessary data for best results.<br />
-				<br />
-				<strong>App Screenshots</strong><br />
-				This should be pretty self explanatory. The icons under this are a web gallery that shows screen shots from some of our completed apps.<br />
-				<br />
-				<strong>Get Your Own App</strong><br />
-				This button sends and email request for more information about getting your own app. It's semi-redundant, but is included in all of our apps.
-                </p>
-            </div>
-            
-            <div data-role="footer" align="center">
-                <a href="#" data-role="button" data-inline="true" data-theme="a" data-rel="back" data-icon="delete" style="margin-top:10px; margin-bottom:10px;">Close Window</a>
-            </div>
+    <!-- Help Popup-->
+    <div data-role="popup" id="help" data-overlay-theme="b" data-theme="a" style="max-width:500px;" class="ui-corner-all help">
+        <div data-role="header" data-theme="a" class="center">
+            <img src="img/logo2.png" alt="logo">
         </div>
+        <div data-role="content">
+            <h2>How does this work?</h2>
+            <p><strong>Send a referral</strong><br>
+                    Tap the Email Referral button and an email will be generated with information about App-Platform.net. Whoever is entered into the To: will receive the information, and App-Platform.net will have both your email address and your referral's email address for tracking purposes.</p>
+            <p><strong>Send this app</strong><br>
+                    Tap the Send this app button to generate an email with a link for downloading this very app!</p>
+            <p><strong>Contact</strong><br>
+                    The buttons under the Contact heading allow for contact with App-Platform.net, including email, our website and our facebook page.</p>
+            <p><strong>Info</strong><br>
+                    The buttons under the Info heading include expandable information for our products and services.</p>
+            <p><strong>App Examples</strong><br>
+                    The buttons under App Examples include examples of several of our apps in action. These are weblinks to the live apps online as well as the instructional landing page for each. They provide an excellent reference for a potential customer to see our applications in action.</p>
+            <p><strong>Get Started on Your App!</strong><br>
+                    The buttons under Get Started on Your App! includes an expandable form for a potential client to enter all of their information to get their own custom application. Follow the instructions in the form and capture all of the necessary data for best results.</p>
+            <p><strong>App Screenshots</strong><br>
+                    This should be pretty self explanatory. The icons under this are a web gallery that shows screen shots from some of our completed apps.</p>
+            <p><strong>Get Your Own App</strong><br>
+                    This button sends and email request for more information about getting your own app. It's semi-redundant, but is included in all of our apps.</p>
+        </div>
+        <div data-role="footer" class="center">
+            <a href="#" data-role="button" data-inline="true" data-theme="a" data-rel="back" data-icon="delete" style="margin-top:10px; margin-bottom:10px;">Close Window</a>
+        </div>
+    </div><!-- /help popup -->
 
-<div class="content-primary">
-
-		<br />
+<fieldset class="container_12">
+	<div class="grid_6 ui-block960-a">
+        <p><strong>Ultimate Business Card App</strong></p>
+        <p><a data-role="button" data-icon="info" target="_blank" onClick="window.plugins.childBrowser.openExternal('http://joeytork.app-platform.net/webapp.htm');">Joey Torkildson</a>
+        <p><a data-role="button" data-icon="info" target="_blank" onClick="window.plugins.childBrowser.openExternal('http://serenebodytherapy.com/app/webapp.htm');">Serene Body Therapy</a>
+        <p><a data-role="button" data-icon="info" target="_blank" onClick="window.plugins.childBrowser.openExternal('http://pyxissolutions.com/app/webapp.htm');">Pyxis Solutions</a>
         <br />
-        
-
-        <strong>Ultimate Business Card App examples</strong>
-        
-        <a data-role="button" data-icon="info" target="_blank" onClick="window.plugins.childBrowser.openExternal('http://joeytork.app-platform.net/webapp.htm');">Joey Torkildson</a>
-        
-        <a data-role="button" data-icon="info" target="_blank" onClick="window.plugins.childBrowser.openExternal('http://serenebodytherapy.com/app/webapp.htm');">Serene Body Therapy</a>
-
-        <a data-role="button" data-icon="info" target="_blank" onClick="window.plugins.childBrowser.openExternal('http://pyxissolutions.com/app/webapp.htm');">Pyxis Solutions</a>
-        
-        <br />
-        <br />
-        
-        <strong>Custom Info Capture App examples</strong>
-        
-        <a data-role="button" data-icon="info" target="_blank" onClick="window.plugins.childBrowser.openExternal('http://app-platform.net/sicora/webapp.htm');">Sicora</a>
-        
-        <br />
-        <br />
-        
-        <strong>Landing Page examples</strong>
-        
-        <a data-role="button" data-icon="info" target="_blank" onClick="window.plugins.childBrowser.openExternal('http://joeytork.app-platform.net');">Joey Torkildson</a>
-        
-        <a data-role="button" data-icon="info" target="_blank" onClick="window.plugins.childBrowser.openExternal('http://pyxissolutions.com/app/');">Pyxis Solutions</a>
-        
-        <br />
-        <br />
-
-</div>        
-<div class="content-secondary">
-       
-		<p>
-        <strong>App Screenshots</strong>
-        <div id="gallery_1"></div>
-        
-        <hr width="100%" style="visibility:hidden;">
-		</p>
-</div>
-        	
-  </div> 
+        <p><strong>Custom Info Capture App examples</strong></p>
+        <p><a data-role="button" data-icon="info" target="_blank" onClick="window.plugins.childBrowser.openExternal('http://app-platform.net/sicora/webapp.htm');">Sicora</a>
+    </div><!-- /block a -->
     
-  <div data-role="footer" data-theme="a">
-    <div class="footerText" align="center" style="margin-top:15px; margin-bottom:15px;">
-		<script type="text/javascript"> 
-            copyright=new Date(); update=copyright.getFullYear(); document.write("&nbsp;Copyright &copy; "+ update + " Jim Hunkins Enterprises");
-        </script>
-        <br /><br />
-        <a href="mailto:?cc=info%40app-platform.net&subject=Get%20Your%20Own%20App!&body=Go%20to%20http%3A%2F%2Fapp-platform.net%20to%20find%20out%20how%20to%20get%20your%20own%20app!" target="_blank" data-role="button" data-theme="a" data-inline="true" data-icon="email">Get your own app!</a>
-      </div>
-    </div> 
-</div>
+	<div class="grid_6 ui-block960-b">
+       <p><strong>App Screenshots</strong></p>
+        <div id="gallery_1"></div>
+        <hr width="100%" style="visibility:hidden;">
+    </div><!-- block b -->
+<!--</div> /grid -->
+</fieldset>
+</div><!-- /content -->  
 
+<div data-role="footer" data-theme="a">
+    <div class="footerText">
+		<p><script>
+            copyright=new Date(); update=copyright.getFullYear(); document.write("&nbsp;Copyright &copy; "+ update + " App-Platform");
+        </script></p>
+        <p><a href="mailto:?cc=info%40app-platform.net&subject=Get%20Your%20Own%20App!&body=Go%20to%20http%3A%2F%2Fapp-platform.net%20to%20find%20out%20how%20to%20get%20your%20own%20app!" target="_blank" data-role="button" data-theme="a" data-inline="true" data-icon="email">Get your own app!</a></p>
+    </div>
+</div><!-- /footer -->
+</div><!-- /page -->
+
+<!-- Bump Headers -->
+<script>
+$(".grid_1, .grid_2, .grid_3, .grid_4, .grid_5, .grid_6, .grid_7, .grid_8, .grid_9, .grid_10, .grid_11, .grid_12").find("p").css("margin-left", "10px");
+</script>
+
+<!-- Call Colorbox -->
+<script type="text/javascript">
+
+  $(document).one('pageshow', '#examples', function () {      
+    var settings = {
+      username: 'jimhunkinsent',
+      maxresults: 50,
+      mode: 'album',
+      album: 'AppPlatform',
+      thumbCrop: 1,
+      showAlbumDescription: false,
+    };
+      $("#gallery_1").pwi(settings);
+  });
+
+</script>
+
+<!-- Form Validation -->
+<script type="text/javascript">
+$(function() {
+    $( "#form1" ).validate({
+        submitHandler: function(form) {
+           var data= $(form).serialize()
+        
+                $.ajax({
+                type: "POST",
+                url: "php/infoRequest.php",
+                //url: "http://app.app-platform.net/infoRequest.php",
+                data: data,
+                success: function(){
+                    $(form).fadeOut();
+                          $('.thanks1').fadeIn(2500);
+                }
+                });
+            return false;
+        }
+    });
+});     
+</script>
+
+<!-- Form reset button -->
+<script type="text/javascript">
+$(function() { $('#reset_button1').click( function() { $('.thanks1').fadeOut(); $('.form1').fadeIn(2500); $("#form1")[0].reset(); });});
+</script>
 
 </body>
 </html>
