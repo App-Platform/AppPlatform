@@ -94,6 +94,10 @@ ul {
    background:#fff;
 }
 
+.ui-overlay-a {
+background: url(../img/stripe.jpg);
+}
+
 
 /* iOS add to home screen 
 http://cubiq.org/add-to-home-screen */
