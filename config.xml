@@ -2,7 +2,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.jimhunkinsent.jimhunkins.app"
-        version   = "2.0.3">
+        version   = "2.0.4">
 		
     <name>App-Platform.net</name>
 
@@ -32,4 +32,4 @@
 	<gap:splash src="iconsAndroid/android-startup-image-480x800.png" gap:platform="android" gap:density="hdpi" />
 	<gap:splash src="iconsAndroid/android-startup-image-720x1280.png" gap:platform="android" gap:density="xhdpi" />
 	
-	</widget>
+</widget>
