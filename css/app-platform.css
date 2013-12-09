@@ -32,6 +32,14 @@ a#body:hover{text-decoration:underline;}
 ul {
 	margin-left: 	-15px;
 }
+.img {
+	min-width: auto;
+	max-width: 100%;
+}
+
+.container_12 .img {
+	margin-top: 1em;
+}
 
 .shadow {
 	-moz-box-shadow: 2px 2px 3px #ccc;
@@ -92,10 +100,6 @@ ul {
 
 .ui-hide-label input.ui-input-text, .ui-hide-label textarea.ui-input-text, .ui-hide-label .ui-input-search, .ui-hide-label div.ui-input-text, .ui-input-search input.ui-input-text, div.ui-input-text input.ui-input-text {
    background:#fff;
-}
-
-.ui-overlay-a {
-background: url(../img/stripe.jpg);
 }
 
 
@@ -222,14 +226,15 @@ http://cubiq.org/add-to-home-screen */
 
 
 /* 960 Grid */
-.ui-btn, .ui-collapsible, .bump {margin-left:10px; margin-right:10px;}
+.ui-btn, .ui-collapsible, .ui-controlgroup-controls, .bump {margin-left:10px; margin-right:10px;}
 
 .ui-divider960 {
 	width: 4% !important;
 }
 
+ 
 @media all and (max-width: 45em) {
-	.ui-block960-a, /* always the first column */
+	.ui-block960-a,
 	.ui-block960-b, 
 	.ui-block960-c,
 	.ui-block960-d,
@@ -244,4 +249,10 @@ http://cubiq.org/add-to-home-screen */
 		width: 100% !important;
 		float:none;
 	}
+	.container_12, .container_16, .img{margin:-10px !important;}
+}
+
+/* Fix table reflow */ 
+.ui-table-reflow.ui-responsive {
+    display: table !important;
 }
